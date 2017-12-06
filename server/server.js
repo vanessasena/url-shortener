@@ -28,10 +28,11 @@ app.get('/new/:url(*)', (req, res) => {
   Path.findOne({originalUrl: url}).then(path => {
     if (path) {
       res.send({
-        originalUrl: path.originalUrl,
+        original_url: path.originalUrl,
         short_url: `${req.protocol}://${req.headers.host}/${path.shortCode}`
       });
     } else {
+      console.log('URL: ', url);
       newPath = new Path({
         originalUrl: url,
         shortCode: shortid.generate()
@@ -39,10 +40,11 @@ app.get('/new/:url(*)', (req, res) => {
 
       newPath.save().then(path => {
         res.send({
-          originalUrl: path.originalUrl,
+          original_url: path.originalUrl,
           short_url: `${req.protocol}://${req.headers.host}/${path.shortCode}`
         });
       }).catch(e => {
+        console.log(e);
         res.status(400).send({
           error: 'Unable to generate short URL.'
         });

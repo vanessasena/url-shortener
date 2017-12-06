@@ -12,11 +12,11 @@
 
 ## Example creation output
 
-    { "original_url":"http://foo.com:80", "short_url":"https://url-shortener-vst.herokuapp.com/SyA-X2Sbz" }
+    { "original_url":"https://www.google.com", "short_url":"http://url-shortener-vst.herokuapp.com/Syq-ChS-f }
 
 ## Usage:
 
-    https://url-shortener-vst.herokuapp.com/SyA-X2Sbz
+    http://url-shortener-vst.herokuapp.com/Syq-ChS-f
 
 Will redirect to:
 
